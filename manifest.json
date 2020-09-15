@@ -1,0 +1,28 @@
+{
+  "name": "Pokedex PWA",
+  "short_name": "Pokedex",
+  "description": "Find any Pokemon !",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "red",
+  "theme_color": "black",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/img/icons/pokedex_80x80.png",
+      "type": "image/png",
+      "sizes": "80x80"
+    },
+    {
+      "src": "/img/icons/pokedex_512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/img/icons/maskable_icon.png",
+      "type": "image/png",
+      "sizes": "1024x1024",
+      "purpose": "any maskable"
+    }
+  ]
+}
