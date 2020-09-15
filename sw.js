@@ -1,4 +1,5 @@
-const staticCache = 'site-static';
+const staticCache = 'site-static-v1';
+const dynamicCache = 'site-dynamic-v1';
 
 // here we need to store request urls !
 const assets = [
@@ -21,10 +22,27 @@ self.addEventListener('install', evt => {
 
 // activate service worker
 self.addEventListener('activate', evt => {
-  // console.log("Service Worker has been activated !");
+  evt.waitUntil(
+    caches.keys().then((keys => {
+      console.log(keys); // get all versions of caches
+      return Promise.all(keys
+        .filter(key => key != staticCache)
+        .map(key => caches.delete(key)) // delete all but not the cache names atline first
+        )
+    }))
+  )
 })
 
 // fetch event
 self.addEventListener('fetch', evt => {
-  // console.log("Fetch event !! ", evt);
-})
+  evt.respondWith(
+    caches.match(evt.request).then((cacheRes) => { // if cachesRes is empty --> redo the fetch request and store in dynamic cache
+      return cacheRes || fetch(evt.request).then((fetchRes) => {
+        return caches.open(dynamicCache).then(cache => {
+          cache.put(evt.request.url, fetchRes.clone());
+          return fetchRes;
+        })
+      })
+    })
+  )
+});
