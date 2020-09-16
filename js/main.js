@@ -1,9 +1,22 @@
+// -------------- service worker ---------------
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/sw.js')
     .then((resp) => console.log("Service Worker correctly registered ! ", resp))
     .catch((error) => console.log("Error with Service Worker registration ! ",error))
 }
 
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.ready
+  .then(function(registration) {
+    console.log('A service worker is active:', registration.active);
+    // begin download of all poke data in background
+    getAllPokemon();
+  });
+}
+
+
+
+// -------------- poke api ---------------
 
 // retrieve pokemon data
 var apiData = {
@@ -12,43 +25,13 @@ var apiData = {
   id: '1'
 }
 
-
-const getPokemonById = async (id) => {
-  const urlPokeData = `https://pokeapi.co/api/v2/pokemon/${id}`;
-  const urlPokePic = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
+// data we want to store in cache for offline use
+var numOfPokeToSave = 60;
 
 
-  Promise.all([fetch(urlPokeData), fetch(urlPokePic)]).then((values) => {
-    console.log(values);
-  });
-
-
-
-  // const res = await fetch(url);
-  // const pokemon = await res.json();
-
-};
-
-function getData() {
-  let firstAPICall = fetch("https://api.endpoint.com/first");
-  let secondAPICall = fetch("https://api.endpoint.com/second");
-
-
-}
-
-
-
-// get all pokemon at the beginning to be able to retrieve the info offline via cache storage //
-const getAllPokemon = async () => {
-  for (let i = 1; i <= 151; i++) {
-    await getPokemonById(i);
-  }
-} 
-
-
-function test() {
+// user button to launch the research of the pokemon
+function searchPoke() {
   let pokeNumber = document.getElementById("pokemon_number").value;
-  console.log(pokeNumber);
   apiData.id = pokeNumber;
   
   let { url, type, id } = apiData;
@@ -61,8 +44,9 @@ function test() {
 }
 
 
+// display asked pokemon on the pokedex screen
 const displayPoke = (data) => {
-  console.log(data);
+
   const html = `
     <div class="name">${data.name}</div>
     <img src=${data.sprites.front_default}>
@@ -74,4 +58,27 @@ const displayPoke = (data) => {
   const pokeDiv = document.querySelector('.pokemon');
   pokeDiv.innerHTML = html;
 }
+
+
+// get all pokemon data to be able to retrieve the info offline via cache storage 
+const getAllPokemon = async () => {
+
+  for (id = 1; id < numOfPokeToSave; id++) {
+    const urlPokeData = `https://pokeapi.co/api/v2/pokemon/${id}`;
+    const resPokeData = await fetch(urlPokeData);
+    const pokemonData = await resPokeData.json();
+    // console.log(pokemonData);
+
+    const urlPokePic = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
+    const resPokePic = await fetch(urlPokePic);
+    const pokemonPic = await resPokePic;
+    // console.log(pokemonPic);
+  }
+
+  // when all poke data and poke pic are downloaded --> say it to the user
+  document.querySelector("#cache-status").innerHTML = "Data from Kanto downloaded in the pokedex !";
+}
+
+
+
 
