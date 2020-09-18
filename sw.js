@@ -12,6 +12,7 @@ const assets = [
   'img/icons/pokedex_80x80.png',
   'img/icons/pokedex_512x512.png',
   'img/icons/maskable_icon.png',
+  'img/icons/speaker_icon.png',
 ];
 
 

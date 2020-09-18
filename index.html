@@ -11,8 +11,10 @@
   <!-- iOS support -->
   <link rel="apple-touch-icon" href="/img/icons/pokedex_512x512.png">
   <meta name="apple-mobile-web-app-status-bar" content="black">
-
   <meta name="theme-color" content="red">
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 </head>
 <body>
@@ -105,21 +107,38 @@
 
       <div class="right-container__black">
 
-        <div class="right-container__screen">
-          <input onclick="searchPoke()" type="number" id="pokemon_number" value="1" placeholder="Poké N°" min="1" max="151">
-        </div>
+
 
       </div>
 
+
+      <div>
+          <input 
+          type="text"
+          id="search"
+          placeholder="search a poke"  
+          >
+      </div>
+
+      <div id="match-list">
+
+      </div>
+
+
+      <!-- <div class="right-container__screen">
+        <input onclick="searchPoke()" type="number" id="pokemon_number" value="1" placeholder="Poké N°" min="1" max="151">
+      </div> -->
 
 
       <div class="right-container__buttons">
 
         <div class="top-button">
-          <div class="main-button" onclick="searchPoke()">
+          <div class="main-button">
             Search
           </div>
         </div>
+
+
 
         <!-- <div class="under-button">
           <div class="left-button" onclick="prevPoke()">Prev</div>
@@ -132,14 +151,11 @@
   </div>
 
 
-  
-    
+  <div class="footer">
+    <img id="poke-loader" src="/img/loader.gif" alt="">
+    <h3 id="cache-status">Downloading the pokedex from Kanto...</h3>
+  </div>
 
-
-
-
-
-  <h6 id="cache-status"></h6>
 
 
   <script src="js/main.js"></script>

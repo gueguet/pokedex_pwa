@@ -8,7 +8,7 @@ if ('serviceWorker' in navigator) {
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.ready
   .then(function(registration) {
-    searchPoke();
+    // searchPoke();
     // begin download of all poke data in background
     getAllPokemon();
   });
@@ -26,21 +26,21 @@ var apiData = {
 }
 
 // data we want to store in cache for offline use
-var numOfPokeToSave = 60;
+var numOfPokeToSave = 151;
 let { url, type, id } = apiData;
 let apiUrl = `${url}${type}/${id}`
 
 // user button to launch the research of the pokemon
-function searchPoke() {
-  let pokeNumber = document.getElementById("pokemon_number").value;
-  id = pokeNumber;
-  let apiUrl = `${url}${type}/${id}`;
+// function searchPoke() {
+//   // let pokeNumber = document.getElementById("pokemon_number").value;
+//   id = pokeNumber;
+//   let apiUrl = `${url}${type}/${id}`;
 
-  fetch(apiUrl)
-    .then((data) => data.json())
-    .then((poke) => displayPoke(poke))
-    .catch((err) => console.log(err))
-}
+//   fetch(apiUrl)
+//     .then((data) => data.json())
+//     .then((poke) => displayPoke(poke))
+//     .catch((err) => console.log(err))
+// }
 
 // types colors
 const colors = {
@@ -66,6 +66,7 @@ const colors = {
 // display asked pokemon on the pokedex screen
 const displayPoke = (data) => {
   document.querySelector('.poke-image').src = data.sprites.front_default;
+  // document.querySelector('.poke-image').src = data.sprites.other["official-artwork"].front_default; // better pics but no front...
   document.querySelector('.poke-name').innerHTML = data.name;
   document.querySelector('.poke-id').innerHTML = "N°" + data.id;
   document.querySelector('.poke-type-one').innerHTML = data.types[0].type.name;
@@ -93,16 +94,20 @@ const getAllPokemon = async () => {
     const urlPokeData = `https://pokeapi.co/api/v2/pokemon/${id}`;
     const resPokeData = await fetch(urlPokeData);
     const pokemonData = await resPokeData.json();
-    // console.log(pokemonData);
 
     const urlPokePic = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
     const resPokePic = await fetch(urlPokePic);
     const pokemonPic = await resPokePic;
-    // console.log(pokemonPic);
+
+    const urlPokePicBack = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/${id}.png`;
+    const resPokePicBack = await fetch(urlPokePicBack);
+    const pokemonPicBack = await resPokePicBack;
   }
 
   // when all poke data and poke pic are downloaded --> say it to the user
-  document.querySelector("#cache-status").innerHTML = "Data from Kanto downloaded in the pokedex !";
+  document.querySelector("#cache-status").innerHTML = "You can begin your adventure offline !";
+  document.querySelector("#poke-loader").style.display = "none";
+
 }
 
 
@@ -167,11 +172,58 @@ const descriptionToSpeech = () => {
         alert("Sorry, your browser doesn't support text to speech!");
       }
     });
-
-
-
-
-
-
 }
+
+
+// search bar
+const search = document.getElementById("search");
+const matchList = document.getElementById("match-list");
+
+const searchPoke = async (searchText) => {
+  const res = await fetch('/data/poke_desc.json');
+  const pokemons = await res.json();
+
+  // get the matches
+  let matches = pokemons.filter(poke => {
+    const regex = new RegExp(`^${searchText}`, 'gi');
+    return poke.name.match(regex);
+  }); 
+
+  if (searchText.length === 0) {
+    matches = [];
+    matchList.innerHTML = '';
+  }
+
+  if (matches.length === 0) {
+    matchList.innerHTML = '';
+  }
+
+  console.log(matches);
+  outputHtml(matches);  
+}
+
+
+// display possibilities in html
+const outputHtml = (matches) => {
+  if (matches.length > 0) {
+    const html = matches.map(
+      match => `<div onclick=putNameHtml("${match.name}")>${match.name}</div>`
+    )
+    .join('');
+
+    matchList.innerHTML = html;
+  }
+}
+
+
+
+const putNameHtml = (pokeName) => {
+  document.getElementById("search").value = pokeName;
+}
+
+search.addEventListener('input', () => searchPoke(search.value));
+
+
+
+
 
