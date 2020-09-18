@@ -8,7 +8,7 @@ if ('serviceWorker' in navigator) {
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.ready
   .then(function(registration) {
-    console.log('A service worker is active:', registration.active);
+    searchPoke();
     // begin download of all poke data in background
     getAllPokemon();
   });
@@ -27,15 +27,14 @@ var apiData = {
 
 // data we want to store in cache for offline use
 var numOfPokeToSave = 60;
-
+let { url, type, id } = apiData;
+let apiUrl = `${url}${type}/${id}`
 
 // user button to launch the research of the pokemon
 function searchPoke() {
   let pokeNumber = document.getElementById("pokemon_number").value;
-  apiData.id = pokeNumber;
-  
-  let { url, type, id } = apiData;
-  let apiUrl = `${url}${type}/${id}`
+  id = pokeNumber;
+  let apiUrl = `${url}${type}/${id}`;
 
   fetch(apiUrl)
     .then((data) => data.json())
@@ -43,20 +42,47 @@ function searchPoke() {
     .catch((err) => console.log(err))
 }
 
+// types colors
+const colors = {
+  fire: '#FDDFDF',
+  grass: '#DEFDE0',
+  electric: '#FCF7DE',
+  water: '#DEF3FD',
+  ground: '#f4e7da',
+  rock: '#d5d5d4',
+  fairy: '#fceaff',
+  poison: '#98d7a5',
+  bug: '#f8d5a3',
+  dragon: '#97b3e6',
+  psychic: '#eaeda1',
+  flying: '#F5F5F5',
+  fighting: '#E6E0D4',
+  normal: '#F5F5F5'
+};
+
+
+
 
 // display asked pokemon on the pokedex screen
 const displayPoke = (data) => {
+  document.querySelector('.poke-image').src = data.sprites.front_default;
+  document.querySelector('.poke-name').innerHTML = data.name;
+  document.querySelector('.poke-id').innerHTML = "N°" + data.id;
+  document.querySelector('.poke-type-one').innerHTML = data.types[0].type.name;
+  const color = colors[data.types[0].type.name];
+  document.querySelector('.poke-type-one').style.background = color;
 
-  const html = `
-    <div class="name">${data.name}</div>
-    <img src=${data.sprites.front_default}>
-    <div class="details">
-      <span>Height : ${data.height}</span>
-    </div>
-  `
-
-  const pokeDiv = document.querySelector('.pokemon');
-  pokeDiv.innerHTML = html;
+  // second type
+  if (data.types.length == 2) {
+    document.querySelector('.poke-type-two').style.display = "block";
+    document.querySelector('.poke-type-two').innerHTML = data.types[1].type.name;
+    const color = colors[data.types[1].type.name];
+    document.querySelector('.poke-type-two').style.background = color;
+  }
+  else {
+    console.log("Only one type !");
+    document.querySelector('.poke-type-two').style.display = "none";
+  }
 }
 
 
@@ -80,5 +106,72 @@ const getAllPokemon = async () => {
 }
 
 
+// prev and next
+const prevPoke = () => {
+  let pokeNumber = parseInt(document.getElementById("pokemon_number").value);
+  if (2 <= pokeNumber <= 151) {
+    document.getElementById("pokemon_number").value = pokeNumber - 1;
+    searchPoke();
+  }
+}
 
+const nextPoke = () => {
+  let pokeNumber = parseInt(document.getElementById("pokemon_number").value);
+  if (1 <= pokeNumber <= 150) {
+    document.getElementById("pokemon_number").value = pokeNumber + 1;
+    searchPoke();
+  }
+}
+
+
+// change sprite of the pokemon --> to back
+const backPic = () => {
+  let pokeNumber = document.getElementById("pokemon_number").value;
+  id = pokeNumber;
+  let apiUrl = `${url}${type}/${id}`
+  
+  fetch(apiUrl)
+    .then((data) => data.json())
+    .then((poke) => document.querySelector('.poke-image').src = poke.sprites.back_default)
+    .catch((err) => console.log(err))
+}
+
+// change sprite of the pokemon --> to front
+const frontPic = () => {
+  let pokeNumber = document.getElementById("pokemon_number").value;
+  id = pokeNumber;
+  let apiUrl = `${url}${type}/${id}`
+  
+  fetch(apiUrl)
+    .then((data) => data.json())
+    .then((poke) => document.querySelector('.poke-image').src = poke.sprites.front_default)
+    .catch((err) => console.log(err))
+}
+
+
+
+// pokemon speech 
+// I didn't see any general description of pokemon with the PokeAPI... Need to laod it from a json
+const descriptionToSpeech = () => {
+
+  let pokeNumber = document.getElementById("pokemon_number").value;
+
+  fetch("/data/poke_desc.json")
+    .then((resp) => resp.json())
+    .then((json) => {
+      if ('speechSynthesis' in window) {
+        var msg = new SpeechSynthesisUtterance();
+        msg.text = json[pokeNumber - 1].description;
+        window.speechSynthesis.speak(msg);
+      } else {
+        alert("Sorry, your browser doesn't support text to speech!");
+      }
+    });
+
+
+
+
+
+
+}
 
