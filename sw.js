@@ -1,14 +1,16 @@
-const staticCache = 'site-static-v1';
-const pokemonCache = 'pokemon-dynamic-v1';
+const staticCache = 'site-static-v2';
+const pokemonCache = 'pokemon-dynamic-v2';
 
 // here we need to store request urls !
 const assets = [
   '/',
   '/index.html',
-  '/css/style.css',
   '/js/main.js',
+  '/data/poke_desc.json',
+  '/css/style.css',
   '/manifest.json',
   'img/dresseur_16x16.ico',
+  'img/loader.gif',
   'img/icons/pokedex_80x80.png',
   'img/icons/pokedex_512x512.png',
   'img/icons/maskable_icon.png',
@@ -36,8 +38,10 @@ self.addEventListener('install', evt => {
 // the pokemon cache will be created after every pokemon are loaded
 self.addEventListener('fetch', evt => {
   evt.respondWith(
-    caches.match(evt.request).then((cacheRes) => { // if cachesRes is empty --> redo the fetch request and store in dynamic cache
-      return cacheRes || fetch(evt.request).then(fetchRes => {
+    caches.match(evt.request).then((cacheRes) => {
+      // if cachesRes is empty --> redo the fetch request and store in dynamic cache
+      return cacheRes || fetch(evt.request)
+      .then(fetchRes => {
         return caches.open(pokemonCache).then(cache => {
           cache.put(evt.request.url, fetchRes.clone());
           return fetchRes;

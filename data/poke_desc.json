@@ -1,6 +1,6 @@
 [
   {
-    "id": "001",
+    "id": "1",
     "name": "Bulbasaur",
     "species": "Seed Pokemon",
     "type": [
@@ -31,7 +31,7 @@
     "gen": 1
   },
   {
-    "id": "002",
+    "id": "2",
     "name": "Ivysaur",
     "species": "Seed Pokemon",
     "type": [
@@ -62,7 +62,7 @@
     "gen": 1
   },
   {
-    "id": "003",
+    "id": "3",
     "name": "Venusaur",
     "species": "Seed Pokemon",
     "type": [
@@ -93,7 +93,7 @@
     "gen": 1
   },
   {
-    "id": "004",
+    "id": "4",
     "name": "Charmander",
     "species": "Lizard Pokemon",
     "type": [
@@ -123,7 +123,7 @@
     "gen": 1
   },
   {
-    "id": "005",
+    "id": "5",
     "name": "Charmeleon",
     "species": "Flame Pokemon",
     "type": [
@@ -153,7 +153,7 @@
     "gen": 1
   },
   {
-    "id": "006",
+    "id": "6",
     "name": "Charizard",
     "species": "Flame Pokemon",
     "type": [
@@ -184,7 +184,7 @@
     "gen": 1
   },
   {
-    "id": "007",
+    "id": "7",
     "name": "Squirtle",
     "species": "Tiny Turtle Pokemon",
     "type": [
@@ -214,7 +214,7 @@
     "gen": 1
   },
   {
-    "id": "008",
+    "id": "8",
     "name": "Wartortle",
     "species": "Turtle Pokemon",
     "type": [
@@ -244,7 +244,7 @@
     "gen": 1
   },
   {
-    "id": "009",
+    "id": "9",
     "name": "Blastoise",
     "species": "Shellfish Pokemon",
     "type": [
@@ -274,7 +274,7 @@
     "gen": 1
   },
   {
-    "id": "010",
+    "id": "10",
     "name": "Caterpie",
     "species": "Worm Pokemon",
     "type": [
@@ -304,7 +304,7 @@
     "gen": 1
   },
   {
-    "id": "011",
+    "id": "11",
     "name": "Metapod",
     "species": "Cocoon Pokemon",
     "type": [
@@ -333,7 +333,7 @@
     "gen": 1
   },
   {
-    "id": "012",
+    "id": "12",
     "name": "Butterfree",
     "species": "Butterfly Pokemon",
     "type": [
@@ -364,7 +364,7 @@
     "gen": 1
   },
   {
-    "id": "013",
+    "id": "13",
     "name": "Weedle",
     "species": "Hairy Bug Pokemon",
     "type": [
@@ -395,7 +395,7 @@
     "gen": 1
   },
   {
-    "id": "014",
+    "id": "14",
     "name": "Kakuna",
     "species": "Cocoon Pokemon",
     "type": [
@@ -425,7 +425,7 @@
     "gen": 1
   },
   {
-    "id": "015",
+    "id": "15",
     "name": "Beedrill",
     "species": "Poison Bee Pokemon",
     "type": [
@@ -456,7 +456,7 @@
     "gen": 1
   },
   {
-    "id": "016",
+    "id": "16",
     "name": "Pidgey",
     "species": "Tiny Bird Pokemon",
     "type": [
@@ -488,7 +488,7 @@
     "gen": 1
   },
   {
-    "id": "017",
+    "id": "17",
     "name": "Pidgeotto",
     "species": "Bird Pokemon",
     "type": [
@@ -520,7 +520,7 @@
     "gen": 1
   },
   {
-    "id": "018",
+    "id": "18",
     "name": "Pidgeot",
     "species": "Bird Pokemon",
     "type": [
@@ -552,7 +552,7 @@
     "gen": 1
   },
   {
-    "id": "019",
+    "id": "19",
     "name": "Rattata",
     "species": "Mouse Pokemon",
     "type": [
@@ -582,7 +582,7 @@
     "gen": 1
   },
   {
-    "id": "020",
+    "id": "20",
     "name": "Raticate",
     "species": "Mouse Pokemon",
     "type": [
@@ -612,7 +612,7 @@
     "gen": 1
   },
   {
-    "id": "021",
+    "id": "21",
     "name": "Spearow",
     "species": "Tiny Bird Pokemon",
     "type": [
@@ -642,7 +642,7 @@
     "gen": 1
   },
   {
-    "id": "022",
+    "id": "22",
     "name": "Fearow",
     "species": "Beak Pokemon",
     "type": [
@@ -672,7 +672,7 @@
     "gen": 1
   },
   {
-    "id": "023",
+    "id": "23",
     "name": "Ekans",
     "species": "Snake Pokemon",
     "type": [
@@ -702,7 +702,7 @@
     "gen": 1
   },
   {
-    "id": "024",
+    "id": "24",
     "name": "Arbok",
     "species": "Cobra Pokemon",
     "type": [
@@ -732,7 +732,7 @@
     "gen": 1
   },
   {
-    "id": "025",
+    "id": "25",
     "name": "Pikachu",
     "species": "Mouse Pokemon",
     "type": [
@@ -761,7 +761,7 @@
     "gen": 1
   },
   {
-    "id": "026",
+    "id": "26",
     "name": "Raichu",
     "species": "Mouse Pokemon",
     "type": [
@@ -790,7 +790,7 @@
     "gen": 1
   },
   {
-    "id": "027",
+    "id": "27",
     "name": "Sandshrew",
     "species": "Mouse Pokemon",
     "type": [
@@ -819,7 +819,7 @@
     "gen": 1
   },
   {
-    "id": "028",
+    "id": "28",
     "name": "Sandslash",
     "species": "Mouse Pokemon",
     "type": [
@@ -848,8 +848,8 @@
     "gen": 1
   },
   {
-    "id": "029",
-    "name": "NidoranÃ¢â„¢â‚¬",
+    "id": "29",
+    "name": "Nidoran",
     "species": "Poison Pin Pokemon",
     "type": [
       "Poison"
@@ -879,7 +879,7 @@
     "gen": 1
   },
   {
-    "id": "030",
+    "id": "30",
     "name": "Nidorina",
     "species": "Poison Pin Pokemon",
     "type": [
@@ -910,7 +910,7 @@
     "gen": 1
   },
   {
-    "id": "031",
+    "id": "31",
     "name": "Nidoqueen",
     "species": "Drill Pokemon",
     "type": [
@@ -942,8 +942,8 @@
     "gen": 1
   },
   {
-    "id": "032",
-    "name": "NidoranÃ¢â„¢â€š",
+    "id": "32",
+    "name": "Nidoran",
     "species": "Poison Pin Pokemon",
     "type": [
       "Poison"
@@ -973,7 +973,7 @@
     "gen": 1
   },
   {
-    "id": "033",
+    "id": "33",
     "name": "Nidorino",
     "species": "Poison Pin Pokemon",
     "type": [
@@ -1004,7 +1004,7 @@
     "gen": 1
   },
   {
-    "id": "034",
+    "id": "34",
     "name": "Nidoking",
     "species": "Drill Pokemon",
     "type": [
@@ -1036,7 +1036,7 @@
     "gen": 1
   },
   {
-    "id": "035",
+    "id": "35",
     "name": "Clefairy",
     "species": "Fairy Pokemon",
     "type": [
@@ -1067,7 +1067,7 @@
     "gen": 1
   },
   {
-    "id": "036",
+    "id": "36",
     "name": "Clefable",
     "species": "Fairy Pokemon",
     "type": [
@@ -1098,7 +1098,7 @@
     "gen": 1
   },
   {
-    "id": "037",
+    "id": "37",
     "name": "Vulpix",
     "species": "Fox Pokemon",
     "type": [
@@ -1127,7 +1127,7 @@
     "gen": 1
   },
   {
-    "id": "038",
+    "id": "38",
     "name": "Ninetales",
     "species": "Fox Pokemon",
     "type": [
@@ -1156,7 +1156,7 @@
     "gen": 1
   },
   {
-    "id": "039",
+    "id": "39",
     "name": "Jigglypuff",
     "species": "Balloon Pokemon",
     "type": [
@@ -1187,7 +1187,7 @@
     "gen": 1
   },
   {
-    "id": "040",
+    "id": "40",
     "name": "Wigglytuff",
     "species": "Balloon Pokemon",
     "type": [
@@ -1218,7 +1218,7 @@
     "gen": 1
   },
   {
-    "id": "041",
+    "id": "41",
     "name": "Zubat",
     "species": "Bat Pokemon",
     "type": [
@@ -1249,7 +1249,7 @@
     "gen": 1
   },
   {
-    "id": "042",
+    "id": "42",
     "name": "Golbat",
     "species": "Bat Pokemon",
     "type": [
@@ -1280,7 +1280,7 @@
     "gen": 1
   },
   {
-    "id": "043",
+    "id": "43",
     "name": "Oddish",
     "species": "Weed Pokemon",
     "type": [
@@ -1311,7 +1311,7 @@
     "gen": 1
   },
   {
-    "id": "044",
+    "id": "44",
     "name": "Gloom",
     "species": "Weed Pokemon",
     "type": [
@@ -1342,7 +1342,7 @@
     "gen": 1
   },
   {
-    "id": "045",
+    "id": "45",
     "name": "Vileplume",
     "species": "Flower Pokemon",
     "type": [
@@ -1373,7 +1373,7 @@
     "gen": 1
   },
   {
-    "id": "046",
+    "id": "46",
     "name": "Paras",
     "species": "Mushroom Pokemon",
     "type": [
@@ -1404,7 +1404,7 @@
     "gen": 1
   },
   {
-    "id": "047",
+    "id": "47",
     "name": "Parasect",
     "species": "Mushroom Pokemon",
     "type": [
@@ -1435,7 +1435,7 @@
     "gen": 1
   },
   {
-    "id": "048",
+    "id": "48",
     "name": "Venonat",
     "species": "Insect Pokemon",
     "type": [
@@ -1466,7 +1466,7 @@
     "gen": 1
   },
   {
-    "id": "049",
+    "id": "49",
     "name": "Venomoth",
     "species": "Poison Moth Pokemon",
     "type": [
@@ -1497,7 +1497,7 @@
     "gen": 1
   },
   {
-    "id": "050",
+    "id": "50",
     "name": "Diglett",
     "species": "Mole Pokemon",
     "type": [
@@ -1527,7 +1527,7 @@
     "gen": 1
   },
   {
-    "id": "051",
+    "id": "51",
     "name": "Dugtrio",
     "species": "Mole Pokemon",
     "type": [
@@ -1557,7 +1557,7 @@
     "gen": 1
   },
   {
-    "id": "052",
+    "id": "52",
     "name": "Meowth",
     "species": "Scratch Cat Pokemon",
     "type": [
@@ -1587,7 +1587,7 @@
     "gen": 1
   },
   {
-    "id": "053",
+    "id": "53",
     "name": "Persian",
     "species": "Classy Cat Pokemon",
     "type": [
@@ -1617,7 +1617,7 @@
     "gen": 1
   },
   {
-    "id": "054",
+    "id": "54",
     "name": "Psyduck",
     "species": "Duck Pokemon",
     "type": [
@@ -1647,7 +1647,7 @@
     "gen": 1
   },
   {
-    "id": "055",
+    "id": "55",
     "name": "Golduck",
     "species": "Duck Pokemon",
     "type": [
@@ -1677,7 +1677,7 @@
     "gen": 1
   },
   {
-    "id": "056",
+    "id": "56",
     "name": "Mankey",
     "species": "Pig Monkey Pokemon",
     "type": [
@@ -1707,7 +1707,7 @@
     "gen": 1
   },
   {
-    "id": "057",
+    "id": "57",
     "name": "Primeape",
     "species": "Pig Monkey Pokemon",
     "type": [
@@ -1737,7 +1737,7 @@
     "gen": 1
   },
   {
-    "id": "058",
+    "id": "58",
     "name": "Growlithe",
     "species": "Puppy Pokemon",
     "type": [
@@ -1767,7 +1767,7 @@
     "gen": 1
   },
   {
-    "id": "059",
+    "id": "59",
     "name": "Arcanine",
     "species": "Legendary Pokemon",
     "type": [
@@ -1797,7 +1797,7 @@
     "gen": 1
   },
   {
-    "id": "060",
+    "id": "60",
     "name": "Poliwag",
     "species": "Tadpole Pokemon",
     "type": [
@@ -1828,7 +1828,7 @@
     "gen": 1
   },
   {
-    "id": "061",
+    "id": "61",
     "name": "Poliwhirl",
     "species": "Tadpole Pokemon",
     "type": [
@@ -1859,7 +1859,7 @@
     "gen": 1
   },
   {
-    "id": "062",
+    "id": "62",
     "name": "Poliwrath",
     "species": "Tadpole Pokemon",
     "type": [
@@ -1891,7 +1891,7 @@
     "gen": 1
   },
   {
-    "id": "063",
+    "id": "63",
     "name": "Abra",
     "species": "Psi Pokemon",
     "type": [
@@ -1922,7 +1922,7 @@
     "gen": 1
   },
   {
-    "id": "064",
+    "id": "64",
     "name": "Kadabra",
     "species": "Psi Pokemon",
     "type": [
@@ -1953,7 +1953,7 @@
     "gen": 1
   },
   {
-    "id": "065",
+    "id": "65",
     "name": "Alakazam",
     "species": "Psi Pokemon",
     "type": [
@@ -1984,7 +1984,7 @@
     "gen": 1
   },
   {
-    "id": "066",
+    "id": "66",
     "name": "Machop",
     "species": "Superpower Pokemon",
     "type": [
@@ -2015,7 +2015,7 @@
     "gen": 1
   },
   {
-    "id": "067",
+    "id": "67",
     "name": "Machoke",
     "species": "Superpower Pokemon",
     "type": [
@@ -2046,7 +2046,7 @@
     "gen": 1
   },
   {
-    "id": "068",
+    "id": "68",
     "name": "Machamp",
     "species": "Superpower Pokemon",
     "type": [
@@ -2077,7 +2077,7 @@
     "gen": 1
   },
   {
-    "id": "069",
+    "id": "69",
     "name": "Bellsprout",
     "species": "Flower Pokemon",
     "type": [
@@ -2108,7 +2108,7 @@
     "gen": 1
   },
   {
-    "id": "070",
+    "id": "70",
     "name": "Weepinbell",
     "species": "Flycatcher Pokemon",
     "type": [
@@ -2139,7 +2139,7 @@
     "gen": 1
   },
   {
-    "id": "071",
+    "id": "71",
     "name": "Victreebel",
     "species": "Flycatcher Pokemon",
     "type": [
@@ -2170,7 +2170,7 @@
     "gen": 1
   },
   {
-    "id": "072",
+    "id": "72",
     "name": "Tentacool",
     "species": "Jellyfish Pokemon",
     "type": [
@@ -2201,7 +2201,7 @@
     "gen": 1
   },
   {
-    "id": "073",
+    "id": "73",
     "name": "Tentacruel",
     "species": "Jellyfish Pokemon",
     "type": [
@@ -2232,7 +2232,7 @@
     "gen": 1
   },
   {
-    "id": "074",
+    "id": "74",
     "name": "Geodude",
     "species": "Rock Pokemon",
     "type": [
@@ -2264,7 +2264,7 @@
     "gen": 1
   },
   {
-    "id": "075",
+    "id": "75",
     "name": "Graveler",
     "species": "Rock Pokemon",
     "type": [
@@ -2296,7 +2296,7 @@
     "gen": 1
   },
   {
-    "id": "076",
+    "id": "76",
     "name": "Golem",
     "species": "Megaton Pokemon",
     "type": [
@@ -2328,7 +2328,7 @@
     "gen": 1
   },
   {
-    "id": "077",
+    "id": "77",
     "name": "Ponyta",
     "species": "Fire Horse Pokemon",
     "type": [
@@ -2358,7 +2358,7 @@
     "gen": 1
   },
   {
-    "id": "078",
+    "id": "78",
     "name": "Rapidash",
     "species": "Fire Horse Pokemon",
     "type": [
@@ -2388,7 +2388,7 @@
     "gen": 1
   },
   {
-    "id": "079",
+    "id": "79",
     "name": "Slowpoke",
     "species": "Dopey Pokemon",
     "type": [
@@ -2419,7 +2419,7 @@
     "gen": 1
   },
   {
-    "id": "080",
+    "id": "80",
     "name": "Slowbro",
     "species": "Hermit Crab Pokemon",
     "type": [
@@ -2450,7 +2450,7 @@
     "gen": 1
   },
   {
-    "id": "081",
+    "id": "81",
     "name": "Magnemite",
     "species": "Magnet Pokemon",
     "type": [
@@ -2481,7 +2481,7 @@
     "gen": 1
   },
   {
-    "id": "082",
+    "id": "82",
     "name": "Magneton",
     "species": "Magnet Pokemon",
     "type": [
@@ -2512,7 +2512,7 @@
     "gen": 1
   },
   {
-    "id": "083",
+    "id": "83",
     "name": "Farfetch'd",
     "species": "Wild Duck Pokemon",
     "type": [
@@ -2540,7 +2540,7 @@
     "gen": 1
   },
   {
-    "id": "084",
+    "id": "84",
     "name": "Doduo",
     "species": "Twin Bird Pokemon",
     "type": [
@@ -2571,7 +2571,7 @@
     "gen": 1
   },
   {
-    "id": "085",
+    "id": "85",
     "name": "Dodrio",
     "species": "Triple Bird Pokemon",
     "type": [
@@ -2602,7 +2602,7 @@
     "gen": 1
   },
   {
-    "id": "086",
+    "id": "86",
     "name": "Seel",
     "species": "Sea Lion Pokemon",
     "type": [
@@ -2632,7 +2632,7 @@
     "gen": 1
   },
   {
-    "id": "087",
+    "id": "87",
     "name": "Dewgong",
     "species": "Sea Lion Pokemon",
     "type": [
@@ -2663,7 +2663,7 @@
     "gen": 1
   },
   {
-    "id": "088",
+    "id": "88",
     "name": "Grimer",
     "species": "Sludge Pokemon",
     "type": [
@@ -2693,7 +2693,7 @@
     "gen": 1
   },
   {
-    "id": "089",
+    "id": "89",
     "name": "Muk",
     "species": "Sludge Pokemon",
     "type": [
@@ -2723,7 +2723,7 @@
     "gen": 1
   },
   {
-    "id": "090",
+    "id": "90",
     "name": "Shellder",
     "species": "Bivalve Pokemon",
     "type": [
@@ -2753,7 +2753,7 @@
     "gen": 1
   },
   {
-    "id": "091",
+    "id": "91",
     "name": "Cloyster",
     "species": "Bivalve Pokemon",
     "type": [
@@ -2784,7 +2784,7 @@
     "gen": 1
   },
   {
-    "id": "092",
+    "id": "92",
     "name": "Gastly",
     "species": "Gas Pokemon",
     "type": [
@@ -2814,7 +2814,7 @@
     "gen": 1
   },
   {
-    "id": "093",
+    "id": "93",
     "name": "Haunter",
     "species": "Gas Pokemon",
     "type": [
@@ -2844,7 +2844,7 @@
     "gen": 1
   },
   {
-    "id": "094",
+    "id": "94",
     "name": "Gengar",
     "species": "Shadow Pokemon",
     "type": [
@@ -2874,7 +2874,7 @@
     "gen": 1
   },
   {
-    "id": "095",
+    "id": "95",
     "name": "Onix",
     "species": "Rock Snake Pokemon",
     "type": [
@@ -2904,7 +2904,7 @@
     "gen": 1
   },
   {
-    "id": "096",
+    "id": "96",
     "name": "Drowzee",
     "species": "Hypnosis Pokemon",
     "type": [
@@ -2934,7 +2934,7 @@
     "gen": 1
   },
   {
-    "id": "097",
+    "id": "97",
     "name": "Hypno",
     "species": "Hypnosis Pokemon",
     "type": [
@@ -2964,7 +2964,7 @@
     "gen": 1
   },
   {
-    "id": "098",
+    "id": "98",
     "name": "Krabby",
     "species": "River Crab Pokemon",
     "type": [
@@ -2994,7 +2994,7 @@
     "gen": 1
   },
   {
-    "id": "099",
+    "id": "99",
     "name": "Kingler",
     "species": "Pincer Pokemon",
     "type": [

@@ -13,9 +13,6 @@
   <meta name="apple-mobile-web-app-status-bar" content="black">
   <meta name="theme-color" content="red">
 
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
 </head>
 <body>
   
@@ -42,7 +39,7 @@
 
                 <div class="screen__header">
                   <span class="poke-name">Poke Name</span>
-                  <span class="poke-id">N°</span>
+                  <span id="poke-id">N°</span>
                 </div>
 
                 <div class="screen__image">
@@ -50,18 +47,21 @@
                 </div>
 
                 <div class="screen__description">
+
                   <div class="stats__types">
                     <span class="poke-type-one"></span>
                     <span class="poke-type-two"></span>
                   </div>
+
                   <div class="screen__stats">
                     <p class="stats__weight">
-                      weight: <span class="poke-weight"></span>
+                      Weight : <span class="poke-weight"></span>
                     </p>
                     <p class="stats__height">
-                      height: <span class="poke-height"></span>
+                      Height : <span class="poke-height"></span>
                     </p>
                   </div>
+
                 </div>
 
               </div>
@@ -107,45 +107,31 @@
 
       <div class="right-container__black">
 
+        <div class="screen__stats_two">
 
-
-      </div>
-
-
-      <div>
-          <input 
-          type="text"
-          id="search"
-          placeholder="search a poke"  
-          >
-      </div>
-
-      <div id="match-list">
-
-      </div>
-
-
-      <!-- <div class="right-container__screen">
-        <input onclick="searchPoke()" type="number" id="pokemon_number" value="1" placeholder="Poké N°" min="1" max="151">
-      </div> -->
-
-
-      <div class="right-container__buttons">
-
-        <div class="top-button">
-          <div class="main-button">
-            Search
+          <div class="sub_stats stats_abilities">
+            test 
           </div>
+
+          <div class="sub_stats stats_euh">
+            test 
+          </div>
+
+
         </div>
 
-
-
-        <!-- <div class="under-button">
-          <div class="left-button" onclick="prevPoke()">Prev</div>
-          <div class="right-button" onclick="nextPoke()">Next</div>
-        </div> -->
-
       </div>
+
+      <div>
+          <input type="text" id="search" placeholder="Search a pokemon...">
+        </div>
+        
+      <div id="match-list"></div>
+   
+      <div class="main-button" onclick="getPoke()">
+        Search
+      </div>
+
 
     </div>
   </div>
@@ -153,7 +139,7 @@
 
   <div class="footer">
     <img id="poke-loader" src="/img/loader.gif" alt="">
-    <h3 id="cache-status">Downloading the pokedex from Kanto...</h3>
+    <h3 id="cache-status">Downloading the pokedex from Kanto : <span id="download-state">1/151</span></h3>
   </div>
 
 

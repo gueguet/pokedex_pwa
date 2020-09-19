@@ -8,12 +8,16 @@ if ('serviceWorker' in navigator) {
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.ready
   .then(function(registration) {
-    // searchPoke();
+    pokeToSeach = 1;
+    getPoke();
     // begin download of all poke data in background
     getAllPokemon();
   });
 }
 
+
+window.addEventListener('online', () => console.log('came online'));
+window.addEventListener('offline', () => console.log('came offline'));
 
 
 // -------------- poke api ---------------
@@ -27,20 +31,22 @@ var apiData = {
 
 // data we want to store in cache for offline use
 var numOfPokeToSave = 151;
+var pokeToSeach = 0;
+
 let { url, type, id } = apiData;
 let apiUrl = `${url}${type}/${id}`
 
-// user button to launch the research of the pokemon
-// function searchPoke() {
-//   // let pokeNumber = document.getElementById("pokemon_number").value;
-//   id = pokeNumber;
-//   let apiUrl = `${url}${type}/${id}`;
 
-//   fetch(apiUrl)
-//     .then((data) => data.json())
-//     .then((poke) => displayPoke(poke))
-//     .catch((err) => console.log(err))
-// }
+// user button to launch the research of the pokemon
+function getPoke() {
+  id = pokeToSeach;
+  let apiUrl = `${url}${type}/${id}`;
+
+  fetch(apiUrl)
+    .then((data) => data.json())
+    .then((poke) => displayPoke(poke))
+    .catch((err) => console.log(err))
+}
 
 // types colors
 const colors = {
@@ -67,8 +73,9 @@ const colors = {
 const displayPoke = (data) => {
   document.querySelector('.poke-image').src = data.sprites.front_default;
   // document.querySelector('.poke-image').src = data.sprites.other["official-artwork"].front_default; // better pics but no front...
-  document.querySelector('.poke-name').innerHTML = data.name;
-  document.querySelector('.poke-id').innerHTML = "N°" + data.id;
+  document.querySelector('.poke-name').innerHTML = data.name.toUpperCase();
+  document.querySelector("#poke-id").innerHTML = `N° ${pokeToSeach}`;
+
   document.querySelector('.poke-type-one').innerHTML = data.types[0].type.name;
   const color = colors[data.types[0].type.name];
   document.querySelector('.poke-type-one').style.background = color;
@@ -84,6 +91,12 @@ const displayPoke = (data) => {
     console.log("Only one type !");
     document.querySelector('.poke-type-two').style.display = "none";
   }
+
+  document.querySelector(".poke-weight").innerHTML = data.weight + " dm";
+  document.querySelector(".poke-height").innerHTML = data.height + " hg";
+
+
+
 }
 
 
@@ -91,6 +104,7 @@ const displayPoke = (data) => {
 const getAllPokemon = async () => {
 
   for (id = 1; id < numOfPokeToSave; id++) {
+
     const urlPokeData = `https://pokeapi.co/api/v2/pokemon/${id}`;
     const resPokeData = await fetch(urlPokeData);
     const pokemonData = await resPokeData.json();
@@ -102,6 +116,8 @@ const getAllPokemon = async () => {
     const urlPokePicBack = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/${id}.png`;
     const resPokePicBack = await fetch(urlPokePicBack);
     const pokemonPicBack = await resPokePicBack;
+
+    document.querySelector("#download-state").innerHTML = `${id}/151`
   }
 
   // when all poke data and poke pic are downloaded --> say it to the user
@@ -113,26 +129,25 @@ const getAllPokemon = async () => {
 
 // prev and next
 const prevPoke = () => {
-  let pokeNumber = parseInt(document.getElementById("pokemon_number").value);
-  if (2 <= pokeNumber <= 151) {
-    document.getElementById("pokemon_number").value = pokeNumber - 1;
-    searchPoke();
+  if (pokeToSeach >= 2) {
+    pokeToSeach --;
+    document.querySelector("#poke-id").innerHTML = `N° ${pokeToSeach}`;
+    getPoke();
   }
 }
 
 const nextPoke = () => {
-  let pokeNumber = parseInt(document.getElementById("pokemon_number").value);
-  if (1 <= pokeNumber <= 150) {
-    document.getElementById("pokemon_number").value = pokeNumber + 1;
-    searchPoke();
+  if (pokeToSeach <= 150) {
+    pokeToSeach ++;
+    document.querySelector("#poke-id").innerHTML = `N° ${pokeToSeach}`;
+    getPoke();
   }
 }
 
 
 // change sprite of the pokemon --> to back
 const backPic = () => {
-  let pokeNumber = document.getElementById("pokemon_number").value;
-  id = pokeNumber;
+  id = pokeToSeach;
   let apiUrl = `${url}${type}/${id}`
   
   fetch(apiUrl)
@@ -143,8 +158,7 @@ const backPic = () => {
 
 // change sprite of the pokemon --> to front
 const frontPic = () => {
-  let pokeNumber = document.getElementById("pokemon_number").value;
-  id = pokeNumber;
+  id = pokeToSeach;
   let apiUrl = `${url}${type}/${id}`
   
   fetch(apiUrl)
@@ -159,14 +173,12 @@ const frontPic = () => {
 // I didn't see any general description of pokemon with the PokeAPI... Need to laod it from a json
 const descriptionToSpeech = () => {
 
-  let pokeNumber = document.getElementById("pokemon_number").value;
-
   fetch("/data/poke_desc.json")
     .then((resp) => resp.json())
     .then((json) => {
       if ('speechSynthesis' in window) {
         var msg = new SpeechSynthesisUtterance();
-        msg.text = json[pokeNumber - 1].description;
+        msg.text = json[pokeToSeach - 1].description;
         window.speechSynthesis.speak(msg);
       } else {
         alert("Sorry, your browser doesn't support text to speech!");
@@ -198,7 +210,7 @@ const searchPoke = async (searchText) => {
     matchList.innerHTML = '';
   }
 
-  console.log(matches);
+
   outputHtml(matches);  
 }
 
@@ -207,7 +219,7 @@ const searchPoke = async (searchText) => {
 const outputHtml = (matches) => {
   if (matches.length > 0) {
     const html = matches.map(
-      match => `<div onclick=putNameHtml("${match.name}")>${match.name}</div>`
+      match => `<div class="poke-suggestions" onclick=putNameHtml("${match.name}","${match.id}")>${match.name}</div>`
     )
     .join('');
 
@@ -217,11 +229,26 @@ const outputHtml = (matches) => {
 
 
 
-const putNameHtml = (pokeName) => {
-  document.getElementById("search").value = pokeName;
+const putNameHtml = (pokeNameToSearch, pokeIdToSearch) => {
+  document.getElementById("search").value = pokeNameToSearch;
+  document.getElementById("match-list").style.display = "None";
+  pokeToSeach = pokeIdToSearch;
 }
 
-search.addEventListener('input', () => searchPoke(search.value));
+search.addEventListener('input', () => {
+  document.getElementById("match-list").style.display = "Block";
+  searchPoke(search.value);
+});
+
+search.addEventListener('click', () => {
+  document.getElementById("match-list").style.display = "Block";
+  searchPoke(search.value);
+});
+
+search.addEventListener('input', () => {
+  searchPoke(search.value);
+
+});
 
 
 

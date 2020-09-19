@@ -13,23 +13,24 @@ body {
 .pokedex {
   align-items: flex-end;
   display: flex;
-  height: 500px;
+  height: 600px;
   margin: 50px;
   width: 800px;
 }
 
 .left-container,
 .right-container {
-  border: 3px solid black;
+  border: 2px solid black;
   width: 50%;
 }
 
 .right-container {
   border-left: none;
+  background: #FE1A55;
 }
 
 .left-container {
-  background: #E71D23;
+  background: #FE1A55;
   height: 100%;
   width: calc(50% + 50px);
 }
@@ -37,17 +38,21 @@ body {
 .left-container__top-section {
   border-bottom: 3px solid black;
   display: flex;
-  height: 50px;
+  height: 70px;
   padding: 8px;
+  -webkit-box-shadow: 1px 18px 3px 0px rgba(72,21,87,1);
+  -moz-box-shadow: 1px 18px 3px 0px rgba(72,21,87,1);
+  box-shadow: 1px 18px 3px 0px rgba(72,21,87,1);
+
 }
 
 .top-section__blue {
   background: radial-gradient(farthest-corner at 10px 10px, white, #369CD4, #369CD4);
   border-radius: 50%;
-  border: 2px solid white;
+  border: 8px solid white;
   box-shadow: 0 0 2px 2px rgba(0,0,0,.5);
-  height: 30px;
-  width: 30px;
+  height: 50px;
+  width: 50px;
 }
 
 .top-section__small-buttons {
@@ -59,36 +64,44 @@ body {
 .top-section__yellow,
 .top-section__green {
   border-radius: 50%;
-  border: 1px solid black;
-  height: 10px;
+  border: 3px solid black;
+  height: 20px;
   margin-right: 5px;
-  width: 10px;
+  width: 20px;
 }
 
 .left-container__main-section-container {
   display: flex;
-  height: calc(100% - 50px);
+  height: calc(100% - 70px);
+
+
 }
 
 .left-container__main-section {
   height: 100%;
-  padding: 25px;
+  padding: 50px 20px;
   width: 500px;
+  -webkit-box-shadow: 1px 5px 3px 0px rgba(72,21,87,1);
+  -moz-box-shadow: 1px 5px 3px 0px rgba(72,21,87,1);
+  box-shadow: 1px 5px 3px 0px rgba(72,21,87,1);
 }
 
-.main-section__white {
+/* .main-section__white {
   background: #DEDEDE;
   border: 3px solid black;
   box-shadow: inset 0 0 3px 3px rgba(0,0,0,.3);
   height: 325px;
-}
+} */
 
 .main-section__black {
-  background: black;
-  height: calc(100% - 50px);
-  margin: 25px;
+  background: #0C1A57;
+  height: calc(100% - 15px);
+  margin: 5px;
   padding: 10px;
-  width: calc(100% - 50px);
+  width: calc(100% - 15px);
+  -webkit-box-shadow: 0px 0px 5px 5px rgba(0,0,0,1);
+  -moz-box-shadow: 0px 0px 5px 5px rgba(0,0,0,1);
+  box-shadow: 0px 0px 5px 5px rgba(0,0,0,1);
 }
 
 .main-screen {
@@ -109,7 +122,7 @@ body {
   font-weight: bold;
 }
 
-.poke-id {
+#poke-id {
   color: white;
   font-size: 20px;
 }
@@ -131,7 +144,6 @@ body {
 }
 
 .screen__stats {
-  background: rgba(0,0,0,.3);
   border-radius: 5px;
   color: white;
   display: flex;
@@ -160,7 +172,7 @@ body {
   align-items: center;
   display: flex;
   justify-content: space-around;
-  margin: 10px 25px 0;
+  margin-top: 40px;
 }
 
 .controllers__d-pad {
@@ -250,6 +262,7 @@ body {
 
 
 .left-container__right {
+  background: linear-gradient(to right, #FC9074, #FE1A55, #481557);
   border-left: 3px solid black;
   display: flex;
   flex-direction: column;
@@ -259,43 +272,49 @@ body {
 }
 
 .left-container__hinge {
-  background: linear-gradient(to right, #7F100F, #E71D23, #E71D23, #7F100F);
   height: 75px;
   width: 100%;
 }
 
 .left-container__hinge:first-child {
-  border-bottom: 3px solid black;
+  
 }
 
 .left-container__hinge:last-child {
-  border-top: 3px solid black;
+  -webkit-box-shadow: 1px 5px 3px 0px rgba(72,21,87,1);
+  -moz-box-shadow: 1px 5px 3px 0px rgba(72,21,87,1);
+  box-shadow: 1px 5px 3px 0px rgba(72,21,87,1);
 }
 
 .top-section__red {
-  background: #7F100F;
+  background: radial-gradient(farthest-corner at 0px 0px, white, #7F100F, #7F100F);
 }
 
 .top-section__yellow {
-  background: #EDF18E;
+  background: radial-gradient(farthest-corner at 0px 0px, white, #EDF18E, #EDF18E);
 }
 
 .top-section__green {
-  background: #33915A;
+  background: radial-gradient(farthest-corner at 0px 0px, white, #33915A, #33915A);
 }
 
 .right-container {
-  background: #E71D23;
   height: calc(100% - 100px);
   padding: 25px;
   width: calc(50% - 50px);
+  -webkit-box-shadow: 1px 5px 3px 0px rgba(72,21,87,1);
+  -moz-box-shadow: 1px 5px 3px 0px rgba(72,21,87,1);
+  box-shadow: 1px 5px 3px 0px rgba(72,21,87,1);
 }
 
 .right-container__black {
-  background: black;
   box-shadow: 0 0 2px 2px rgba(0,0,0,.3);
-  height: 100px;
+  height: 280px;
   padding: 10px;
+  background: #0C1A57;
+  -webkit-box-shadow: 0px 0px 5px 5px rgba(0,0,0,1);
+  -moz-box-shadow: 0px 0px 5px 5px rgba(0,0,0,1);
+  box-shadow: 0px 0px 5px 5px rgba(0,0,0,1);
 }
 
 .right-container__screen {
@@ -330,27 +349,8 @@ body {
   color: white;
 }
 
-.right-container__buttons {
-  border: 2px solid black;
-  display: flex;
-  flex-direction: column;
-  margin-top: 25px;
-  padding: 10px;
-}
 
-.top-button {
-  display: flex;
-  width: 200px;
-  justify-content: center;
-  margin: auto;
-}
 
-.under-button {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  margin-top: 2vh;
-}
 
 .left-button,
 .main-button,
@@ -375,53 +375,58 @@ body {
   background: white;
 }
 
+.main-button:hover,
 .left-button:active,
 .right-button:active {
   box-shadow: inset 0 0 2px 2px rgba(0,0,0,.3);
 }
 
+.main-button {
+  margin: auto;
+  margin-top: 100px;
+}
 
-.hide {
-  /* display: none; */
+
+/* .hide {
+  display: none;
+} */
+
+
+
+
+/* search bar and suggestions */
+
+
+#match-list {
+  width: 15%;
+  position: absolute;
+  background-color: rgba(148, 135, 135, 0.548);
+}
+
+#search {
+  width: 100%;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 15px;
+  padding: 2px;
 }
 
 
 
 
-/* search bar */
-.container {
-  width: 60%;
-  margin: 10px auto;
-  background: #333;
-  border-radius: 6px;
-  overflow: hidden;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.4), 0 4px 4px rgba(0, 0, 0, 0.2);
-}
-.container input {
-  background: transparent;
-  border: 0;
-  font-size: 30px;
-  color: #fff;
-}
-.suggestions {
-  border-top: 2px solid #999;
-}
-.suggestions > div {
-  padding: 15px;
-  font-size: 20px;
-  color: #fff;
+.poke-suggestions { 
+  background-color: white;
+  color: black;
+  padding: 2px;
+  font-size: 15px;
   border-top: 1px solid #666;
   cursor: pointer;
 }
-.suggestions > div:hover {
-  background-color: #1e4dd4;
+
+.poke-suggestions:hover {
+  background-color: grey;
 }
-.emphy {
-  width: 50%;
-  margin: 40px auto;
-  text-align: center;
-  color: #fff;
-}
+
 
 
 /* footer */
@@ -446,3 +451,19 @@ body {
 
 
 
+/* second screen */
+.screen__stats_two {
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+.sub_stats {
+  padding: 10px 2px;
+  border-bottom: 1px solid white;
+}
+
+.abilities {
+
+
+}
