@@ -433,9 +433,9 @@ body {
 .footer {
   position: fixed;
   bottom: 0px;
-  padding: 30px;
+  padding: 1vmin;
   background-color: rgb(203, 224, 240);
-  width: 100%;
+  width: 100vmax;
   text-align: center;
   display: flex;
   flex-direction: row;
@@ -445,7 +445,7 @@ body {
 
 .footer img {
   margin-right: 20px;
-  width: 50px;
+  width: 20px;
 }
 
 

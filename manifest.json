@@ -7,6 +7,7 @@
   "background_color": "red",
   "theme_color": "black",
   "scope": "/",
+  "orientation": "landscape-primary",
   "icons": [
     {
       "src": "/img/icons/pokedex_80x80.png",
