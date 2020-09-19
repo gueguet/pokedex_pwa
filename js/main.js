@@ -223,7 +223,7 @@ const displayPoke = (data) => {
 
 
 
-
+  document.querySelector("#list-moves").innerHTML = "";
 
   data.moves.forEach(elt => {
     document.querySelector("#list-moves").innerHTML += `<h5>${elt.move.name}</h5>`;
