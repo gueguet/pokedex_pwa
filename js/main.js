@@ -10,7 +10,6 @@ if ('serviceWorker' in navigator) {
   .then(function(registration) {
     pokeToSeach = 1;
     getPoke();
-    // begin download of all poke data in background
     getAllPokemon();
   });
 }
@@ -88,12 +87,150 @@ const displayPoke = (data) => {
     document.querySelector('.poke-type-two').style.background = color;
   }
   else {
-    console.log("Only one type !");
     document.querySelector('.poke-type-two').style.display = "none";
   }
 
   document.querySelector(".poke-weight").innerHTML = data.weight + " dm";
   document.querySelector(".poke-height").innerHTML = data.height + " hg";
+
+
+  document.querySelector("#hp-value").innerHTML = data.stats[0].base_stat;
+  document.querySelector("#hp-bar").style.width = data.stats[0].base_stat + 'px';
+
+  document.querySelector("#attack-value").innerHTML = data.stats[1].base_stat;
+  document.querySelector("#attack-bar").style.width = data.stats[1].base_stat + 'px';
+
+  document.querySelector("#defense-value").innerHTML = data.stats[2].base_stat;
+  document.querySelector("#defense-bar").style.width = data.stats[2].base_stat + 'px';
+
+  document.querySelector("#special-attack-value").innerHTML = data.stats[3].base_stat;
+  document.querySelector("#special-attack-bar").style.width = data.stats[3].base_stat + 'px';
+
+  document.querySelector("#special-defense-value").innerHTML = data.stats[4].base_stat;
+  document.querySelector("#special-defense-bar").style.width = data.stats[4].base_stat + 'px';
+
+  document.querySelector("#speed-value").innerHTML = data.stats[5].base_stat;
+  document.querySelector("#speed-bar").style.width = data.stats[5].base_stat + 'px';
+  
+  // long and nasty... stats
+  if (data.stats[0].base_stat <= 50) {
+    
+    document.querySelector("#hp-bar").classList.remove("orange-style");
+    document.querySelector("#hp-bar").classList.remove("green-style");
+    document.querySelector("#hp-bar").classList.add("red-style");
+  } 
+  if (data.stats[0].base_stat > 50 && data.stats[0].base_stat < 100) {
+    
+    document.querySelector("#hp-bar").classList.remove("red-style");
+    document.querySelector("#hp-bar").classList.remove("green-style");
+    document.querySelector("#hp-bar").classList.add("orange-style");
+  }
+  if (data.stats[0].base_stat >= 100) {
+    document.querySelector("#hp-bar").classList.remove("red-style");
+    document.querySelector("#hp-bar").classList.remove("orange-style");
+    document.querySelector("#hp-bar").classList.add("green-style");
+  }
+
+  if (data.stats[1].base_stat <= 50) {
+    
+    document.querySelector("#attack-bar").classList.remove("orange-style");
+    document.querySelector("#attack-bar").classList.remove("green-style");
+    document.querySelector("#attack-bar").classList.add("red-style");
+  } 
+  if (data.stats[1].base_stat > 50 && data.stats[0].base_stat < 100) {
+    
+    document.querySelector("#attack-bar").classList.remove("red-style");
+    document.querySelector("#attack-bar").classList.remove("green-style");
+    document.querySelector("#attack-bar").classList.add("orange-style");
+  }
+  if (data.stats[1].base_stat >= 100) {
+    document.querySelector("#attack-bar").classList.remove("red-style");
+    document.querySelector("#attack-bar").classList.remove("orange-style");
+    document.querySelector("#attack-bar").classList.add("green-style");
+  }
+
+  if (data.stats[2].base_stat <= 50) {
+    
+    document.querySelector("#defense-bar").classList.remove("orange-style");
+    document.querySelector("#defense-bar").classList.remove("green-style");
+    document.querySelector("#defense-bar").classList.add("red-style");
+  } 
+  if (data.stats[2].base_stat > 50 && data.stats[0].base_stat < 100) {
+    
+    document.querySelector("#defense-bar").classList.remove("red-style");
+    document.querySelector("#defense-bar").classList.remove("green-style");
+    document.querySelector("#defense-bar").classList.add("orange-style");
+  }
+  if (data.stats[2].base_stat >= 100) {
+    document.querySelector("#defense-bar").classList.remove("red-style");
+    document.querySelector("#defense-bar").classList.remove("orange-style");
+    document.querySelector("#defense-bar").classList.add("green-style");
+  }
+
+  if (data.stats[3].base_stat <= 50) {
+    
+    document.querySelector("#special-attack-bar").classList.remove("orange-style");
+    document.querySelector("#special-attack-bar").classList.remove("green-style");
+    document.querySelector("#special-attack-bar").classList.add("red-style");
+  } 
+  if (data.stats[3].base_stat > 50 && data.stats[0].base_stat < 100) {
+    
+    document.querySelector("#special-attack-bar").classList.remove("red-style");
+    document.querySelector("#special-attack-bar").classList.remove("green-style");
+    document.querySelector("#special-attack-bar").classList.add("orange-style");
+  }
+  if (data.stats[3].base_stat >= 100) {
+    document.querySelector("#special-attack-bar").classList.remove("red-style");
+    document.querySelector("#special-attack-bar").classList.remove("orange-style");
+    document.querySelector("#special-attack-bar").classList.add("green-style");
+  }
+
+  if (data.stats[4].base_stat <= 50) {
+    
+    document.querySelector("#special-defense-bar").classList.remove("orange-style");
+    document.querySelector("#special-defense-bar").classList.remove("green-style");
+    document.querySelector("#special-defense-bar").classList.add("red-style");
+  } 
+  if (data.stats[4].base_stat > 50 && data.stats[0].base_stat < 100) {
+    
+    document.querySelector("#special-defense-bar").classList.remove("red-style");
+    document.querySelector("#special-defense-bar").classList.remove("green-style");
+    document.querySelector("#special-defense-bar").classList.add("orange-style");
+  }
+  if (data.stats[4].base_stat >= 100) {
+    document.querySelector("#special-defense-bar").classList.remove("red-style");
+    document.querySelector("#special-defense-bar").classList.remove("orange-style");
+    document.querySelector("#special-defense-bar").classList.add("green-style");
+  }
+
+  if (data.stats[5].base_stat <= 50) {
+    
+    document.querySelector("#speed-bar").classList.remove("orange-style");
+    document.querySelector("#speed-bar").classList.remove("green-style");
+    document.querySelector("#speed-bar").classList.add("red-style");
+  } 
+  if (data.stats[5].base_stat > 50 && data.stats[0].base_stat < 100) {
+    
+    document.querySelector("#speed-bar").classList.remove("red-style");
+    document.querySelector("#speed-bar").classList.remove("green-style");
+    document.querySelector("#speed-bar").classList.add("orange-style");
+  }
+  if (data.stats[5].base_stat >= 100) {
+    document.querySelector("#speed-bar").classList.remove("red-style");
+    document.querySelector("#speed-bar").classList.remove("orange-style");
+    document.querySelector("#speed-bar").classList.add("green-style");
+  }
+
+
+
+
+
+  data.moves.forEach(elt => {
+    document.querySelector("#list-moves").innerHTML += `<h5>${elt.move.name}</h5>`;
+  })
+
+
+
 
 
 
