@@ -4,7 +4,7 @@
 
 Here is a pokedex to show you information about the pokemon of the very first generation (we agree this is the best one...)  
 
-It's a PWA so if you wait for the info to be downloaded, you can just go offline and still access the info  
+It's a PWA so if you wait for the info to be downloaded, you can just go offline and still access the pokemon data!  
 As you know sometimes you don't have any network connection in the tall grass...
 
 ![poekedex_preview](pokedex_screenshot.png)
